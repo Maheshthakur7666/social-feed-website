@@ -5,8 +5,10 @@ import axios from "axios";
 const API = "https://social-feed-website.onrender.com";
 
 const CreatePost = () => {
+   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
