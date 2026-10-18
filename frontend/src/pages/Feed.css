@@ -76,3 +76,65 @@
 .comment-error {
     color: red;
 }
+
+.back-button {
+  display: block;
+  margin: 0 auto 25px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #4338ca;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: #312e81;
+}
+
+.post-actions {
+  display: flex;
+  gap: 12px;
+  margin: 15px 4px;
+}
+
+.post-actions button,
+.comments-section button {
+  padding: 9px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.comments-section h3 {
+  color: #312e81;
+}
+
+.comments-section form {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.comments-section input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+
