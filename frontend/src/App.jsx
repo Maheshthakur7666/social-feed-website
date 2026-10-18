@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CreatePost from './pages/CreatePost.jsx';
-import Feed from './pages/feed.jsx';
+import Feed from './pages/Feed.jsx';
 
 const App = () => {
     return (
