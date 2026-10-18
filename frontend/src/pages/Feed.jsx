@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Feed.css";
 
-const API = "http://localhost:3000";
+const API = "https://social-feed-website.onrender.com";
 
 const Feed = () => {
     const [posts, setPosts] = useState([]);
@@ -31,6 +31,7 @@ const Feed = () => {
         if (busy[postId]) return;
 
         setBusy(prev => ({ ...prev, [postId]: true }));
+        setErrors(prev => ({ ...prev, [postId]: "" }));
 
         try {
             const res = await axios.post(
@@ -210,7 +211,6 @@ const Feed = () => {
                         <div className="comments-section">
                             <h3>Comments ({comments.length})</h3>
 
-                            {/* Display each comment */}
                             {comments.map((comment, index) => (
                                 <div
                                     className="comment"
@@ -223,7 +223,6 @@ const Feed = () => {
                                         {comment.text}
                                     </p>
 
-                                    {/* Delete button */}
                                     <button
                                         type="button"
                                         className="delete-comment-btn"
@@ -251,7 +250,6 @@ const Feed = () => {
                                 }
                             />
 
-                            {/* Post comment button */}
                             <button
                                 type="button"
                                 onClick={() => addComment(post._id)}
@@ -262,7 +260,6 @@ const Feed = () => {
                                     : "Post Comment"}
                             </button>
 
-                            {/* Error message */}
                             {errors[post._id] && (
                                 <p className="comment-error">
                                     {errors[post._id]}
@@ -277,3 +274,4 @@ const Feed = () => {
 };
 
 export default Feed;
+
