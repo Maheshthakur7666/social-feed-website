@@ -248,3 +248,10 @@
         border-radius: 18px;
     }
 }
+.create-post-section button[type="button"] {
+    background: linear-gradient(135deg, #16a34a, #059669);
+}
+
+.create-post-section button[type="button"]:hover {
+    background: linear-gradient(135deg, #15803d, #047857);
+}
