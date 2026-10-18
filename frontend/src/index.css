@@ -1,4 +1,5 @@
 
+/* Create Post page */
 .create-post-section {
     min-height: 100vh;
     display: flex;
@@ -7,36 +8,18 @@
     justify-content: center;
     padding: 30px 20px;
     box-sizing: border-box;
-
-    background: linear-gradient(
-        135deg,
-        #667eea,
-        #764ba2,
-        #f093fb,
-        #f5576c
-    );
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
     background-size: 300% 300%;
     animation: gradientMove 10s ease infinite;
-
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* Animated background */
 @keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* Heading */
 .create-post-section h1 {
     color: white;
     font-size: 38px;
@@ -46,21 +29,17 @@
     text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Form card */
 .create-post-section form {
     width: 100%;
     max-width: 430px;
     display: flex;
     flex-direction: column;
     gap: 22px;
-
     padding: 35px;
     box-sizing: border-box;
-
     background: rgba(255, 255, 255, 0.96);
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.7);
-
     box-shadow: 0 20px 50px rgba(35, 20, 80, 0.25);
     transition: transform 0.3s ease;
 }
@@ -69,20 +48,16 @@
     transform: translateY(-5px);
 }
 
-/* Image upload */
 .create-post-section input[type="file"] {
     width: 100%;
     padding: 18px 12px;
     box-sizing: border-box;
-
     background: linear-gradient(135deg, #f3e8ff, #fce7f3);
     border: 2px dashed #a855f7;
     border-radius: 15px;
-
     color: #6b21a8;
     font-size: 14px;
     cursor: pointer;
-
     transition: all 0.3s ease;
 }
 
@@ -91,20 +66,16 @@
     border-color: #ec4899;
 }
 
-/* Caption input */
 .create-post-section input[type="text"] {
     width: 100%;
     padding: 15px 16px;
     box-sizing: border-box;
-
     background: #f8fafc;
     border: 2px solid #e2e8f0;
     border-radius: 12px;
-
     font-size: 15px;
     color: #1e293b;
     outline: none;
-
     transition: all 0.3s ease;
 }
 
@@ -118,24 +89,18 @@
     box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.15);
 }
 
-/* Submit button */
 .create-post-section button {
     width: 100%;
     padding: 15px;
-
     border: none;
     border-radius: 12px;
-
     background: linear-gradient(135deg, #7c3aed, #ec4899);
     color: white;
-
     font-size: 17px;
     font-weight: 700;
     letter-spacing: 0.5px;
-
     cursor: pointer;
     box-shadow: 0 8px 18px rgba(168, 85, 247, 0.3);
-
     transition: all 0.3s ease;
 }
 
@@ -149,22 +114,15 @@
     transform: scale(0.97);
 }
 
-/* Main feed section */
+/* Feed page */
 .feed-section {
     min-height: 100vh;
     padding: 40px 20px;
     box-sizing: border-box;
     font-family: 'Segoe UI', Arial, sans-serif;
-
-    background: linear-gradient(
-        135deg,
-        #e0e7ff,
-        #fce7f3,
-        #fae8ff
-    );
+    background: linear-gradient(135deg, #e0e7ff, #fce7f3, #fae8ff);
 }
 
-/* Feed heading */
 .feed-section h1 {
     text-align: center;
     font-size: 38px;
@@ -173,28 +131,23 @@
     margin-bottom: 35px;
 }
 
-/* Post card */
 .post-card {
     width: 100%;
     max-width: 550px;
     margin: 0 auto 30px;
     padding: 18px;
     box-sizing: border-box;
-
     background: white;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(109, 40, 217, 0.12);
-
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect */
 .post-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 16px 35px rgba(109, 40, 217, 0.2);
 }
 
-/* Post image */
 .post-card img {
     display: block;
     width: 100%;
@@ -203,7 +156,6 @@
     border-radius: 14px;
 }
 
-/* Post caption */
 .post-card p {
     margin: 16px 4px 5px;
     font-size: 17px;
@@ -212,7 +164,7 @@
     font-weight: 500;
 }
 
-/* Mobile responsive */
+/* Responsive styles */
 @media (max-width: 600px) {
     .feed-section {
         padding: 25px 14px;
@@ -222,10 +174,11 @@
         font-size: 30px;
     }
 
-    .post-card {
-       
+    .post-card img {
+        height: 260px;
+    }
+}
 
-/* Mobile responsive */
 @media (max-width: 480px) {
     .create-post-section {
         padding: 20px 15px;
