@@ -158,27 +158,35 @@
 }
 
 /* Feed Page */
+
+/* Feed Page */
 .feed-section {
     min-height: 100vh;
     padding: 40px 20px;
     box-sizing: border-box;
     font-family: 'Segoe UI', Arial, sans-serif;
 
+    /* Dark blue animated background */
     background: linear-gradient(
         135deg,
-        #e0f2fe,
-        #f0f9ff,
-        #ccfbf1
+        #0f2027,
+        #203a43,
+        #2c5364
     );
+    background-size: 300% 300%;
+    animation: gradientMove 10s ease infinite;
 }
 
 .feed-section h1 {
     text-align: center;
     font-size: 38px;
     font-weight: 800;
-    color: #155e75;
+    color: #ffffff;
     margin-bottom: 35px;
 }
+
+
+
 
 /* Individual Post Card */
 .post-card {
