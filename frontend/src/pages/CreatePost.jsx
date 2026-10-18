@@ -51,6 +51,12 @@ const CreatePost = () => {
         <button type="submit" disabled={loading}>
           {loading ? "Uploading..." : "Upload Post"}
         </button>
+         <button
+  type="button"
+  onClick={() => navigate("/feed")}
+>
+  View Feed
+</button>
 
         {message && <p>{message}</p>}
       </form>
