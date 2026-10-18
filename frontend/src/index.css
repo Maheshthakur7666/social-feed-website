@@ -148,7 +148,7 @@
 .create-post-section button:active {
     transform: scale(0.97);
 }
-```css
+
 /* Main feed section */
 .feed-section {
     min-height: 100vh;
