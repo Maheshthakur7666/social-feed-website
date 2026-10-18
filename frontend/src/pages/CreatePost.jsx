@@ -1,51 +1,63 @@
 
-import React from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
+
+const API = "https://social-feed-website.onrender.com";
 
 const CreatePost = () => {
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
-        const formData = new FormData(e.target);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage("");
 
-        axios.post(
-            "http://localhost:3000/create-post",
-            formData
-        )
-        .then((res) => {
-            console.log("Post created:", res.data);
-            alert("Post created successfully!");
-            e.target.reset();
-        })
-        .catch((err) => {
-            console.error("Upload error:", err.response?.data || err.message);
-            alert("Image upload failed. Check the console.");
-        });
-    };
+    const formData = new FormData(e.target);
 
-    return (
-        <section className="create-post-section">
-            <h1>Create post</h1>
+    try {
+      await axios.post(`${API}/create-post`, formData);
+      setMessage("Post created successfully!");
+      e.target.reset();
+    } catch (error) {
+      console.error("Upload error:", error);
+      setMessage(
+        error.response?.data?.message ||
+          "Upload failed. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="file"
-                    name="image"
-                    accept="image/*"
-                    required
-                />
+  return (
+    <div className="create-post">
+      <h2>Create Post</h2>
 
-                <input
-                    type="text"
-                    name="caption"
-                    placeholder="Enter caption"
-                    required
-                />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="file"
+          name="image"
+          accept="image/*"
+          required
+        />
 
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    );
+        <input
+          type="text"
+          name="caption"
+          placeholder="Write a caption..."
+          required
+        />
+
+        <button type="submit" disabled={loading}>
+          {loading ? "Uploading..." : "Upload Post"}
+        </button>
+      </form>
+
+      {message && <p>{message}</p>}
+    </div>
+  );
 };
 
 export default CreatePost;
+
