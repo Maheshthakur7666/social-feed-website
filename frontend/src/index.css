@@ -1,5 +1,5 @@
 
-/* Create Post page */
+/* Create Post Page */
 .create-post-section {
     min-height: 100vh;
     display: flex;
@@ -8,18 +8,36 @@
     justify-content: center;
     padding: 30px 20px;
     box-sizing: border-box;
-    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
+
+    /* Ocean Blue animated background */
+    background: linear-gradient(
+        135deg,
+        #0f2027,
+        #203a43,
+        #2c5364,
+        #1b4965
+    );
     background-size: 300% 300%;
     animation: gradientMove 10s ease infinite;
+
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
+/* Create Post Heading */
 .create-post-section h1 {
     color: white;
     font-size: 38px;
@@ -29,6 +47,7 @@
     text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Create Post Form */
 .create-post-section form {
     width: 100%;
     max-width: 430px;
@@ -37,10 +56,12 @@
     gap: 22px;
     padding: 35px;
     box-sizing: border-box;
+
     background: rgba(255, 255, 255, 0.96);
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: 0 20px 50px rgba(35, 20, 80, 0.25);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+
     transition: transform 0.3s ease;
 }
 
@@ -48,34 +69,40 @@
     transform: translateY(-5px);
 }
 
+/* Image Input */
 .create-post-section input[type="file"] {
     width: 100%;
     padding: 18px 12px;
     box-sizing: border-box;
-    background: linear-gradient(135deg, #f3e8ff, #fce7f3);
-    border: 2px dashed #a855f7;
+
+    background: linear-gradient(135deg, #e0f2fe, #ccfbf1);
+    border: 2px dashed #0891b2;
     border-radius: 15px;
-    color: #6b21a8;
+    color: #155e75;
     font-size: 14px;
     cursor: pointer;
+
     transition: all 0.3s ease;
 }
 
 .create-post-section input[type="file"]:hover {
-    background: linear-gradient(135deg, #e9d5ff, #fbcfe8);
-    border-color: #ec4899;
+    background: linear-gradient(135deg, #bae6fd, #99f6e4);
+    border-color: #0e7490;
 }
 
+/* Caption Input */
 .create-post-section input[type="text"] {
     width: 100%;
     padding: 15px 16px;
     box-sizing: border-box;
+
     background: #f8fafc;
     border: 2px solid #e2e8f0;
     border-radius: 12px;
     font-size: 15px;
     color: #1e293b;
     outline: none;
+
     transition: all 0.3s ease;
 }
 
@@ -85,69 +112,95 @@
 
 .create-post-section input[type="text"]:focus {
     background: white;
-    border-color: #a855f7;
-    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.15);
+    border-color: #0891b2;
+    box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.15);
 }
 
+/* Upload Button */
 .create-post-section button {
     width: 100%;
     padding: 15px;
     border: none;
     border-radius: 12px;
-    background: linear-gradient(135deg, #7c3aed, #ec4899);
+
+    background: linear-gradient(135deg, #0891b2, #2563eb);
     color: white;
     font-size: 17px;
     font-weight: 700;
     letter-spacing: 0.5px;
     cursor: pointer;
-    box-shadow: 0 8px 18px rgba(168, 85, 247, 0.3);
+
+    box-shadow: 0 8px 18px rgba(8, 145, 178, 0.3);
     transition: all 0.3s ease;
 }
 
-.create-post-section button:hover {
-    background: linear-gradient(135deg, #6d28d9, #db2777);
+.create-post-section button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #0e7490, #1d4ed8);
     transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 12px 25px rgba(8, 145, 178, 0.4);
 }
 
 .create-post-section button:active {
     transform: scale(0.97);
 }
 
-/* Feed page */
+.create-post-section button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Success and Error Messages */
+.create-post-section form p {
+    margin: 0;
+    text-align: center;
+    color: #334155;
+    font-size: 14px;
+}
+
+/* Feed Page */
 .feed-section {
     min-height: 100vh;
     padding: 40px 20px;
     box-sizing: border-box;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #e0e7ff, #fce7f3, #fae8ff);
+
+    background: linear-gradient(
+        135deg,
+        #e0f2fe,
+        #f0f9ff,
+        #ccfbf1
+    );
 }
 
 .feed-section h1 {
     text-align: center;
     font-size: 38px;
     font-weight: 800;
-    color: #6d28d9;
+    color: #155e75;
     margin-bottom: 35px;
 }
 
+/* Individual Post Card */
 .post-card {
     width: 100%;
     max-width: 550px;
     margin: 0 auto 30px;
     padding: 18px;
     box-sizing: border-box;
+
     background: white;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(109, 40, 217, 0.12);
+    box-shadow: 0 10px 30px rgba(8, 145, 178, 0.12);
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .post-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 16px 35px rgba(109, 40, 217, 0.2);
+    box-shadow: 0 16px 35px rgba(8, 145, 178, 0.2);
 }
 
+/* Post Image */
 .post-card img {
     display: block;
     width: 100%;
@@ -156,6 +209,7 @@
     border-radius: 14px;
 }
 
+/* Post Caption */
 .post-card p {
     margin: 16px 4px 5px;
     font-size: 17px;
@@ -164,7 +218,7 @@
     font-weight: 500;
 }
 
-/* Responsive styles */
+/* Responsive Styles */
 @media (max-width: 600px) {
     .feed-section {
         padding: 25px 14px;
