@@ -21,18 +21,15 @@ const CreatePost = () => {
       e.target.reset();
     } catch (error) {
       console.error("Upload error:", error);
-      setMessage(
-        error.response?.data?.message ||
-          "Upload failed. Please try again."
-      );
+      setMessage("Upload failed. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="create-post">
-      <h2>Create Post</h2>
+    <div className="create-post-section">
+      <h1>Create Post</h1>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -52,9 +49,9 @@ const CreatePost = () => {
         <button type="submit" disabled={loading}>
           {loading ? "Uploading..." : "Upload Post"}
         </button>
-      </form>
 
-      {message && <p>{message}</p>}
+        {message && <p>{message}</p>}
+      </form>
     </div>
   );
 };
